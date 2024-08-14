@@ -15,7 +15,7 @@ SITUATION:
     > git init
 
 3) (OPTIONAL) Create a README.md file
-    > New-Item -Path "<path to project>" -Name "README.md" -ItemType "File"
+    > New-Item -Path "path to project" -Name "README.md" -ItemType "File"
 
     //creates an empty README.md in the directory
 
@@ -34,13 +34,13 @@ SITUATION:
 6) Copy repo URL and Push the LOCAL repo to Github
 
     //adds the github repo as a remote
-    > git remote add origin <repo URL>
+    > git remote add origin repo URL
 
 7) Push the code to Github
 
     //check the name of the branch first, it usually is MAIN or MASTER
     > git branch
-    > git push -u origin <branch>
+    > git push -u origin branch
 
 
 SITUATION:
@@ -81,20 +81,37 @@ SITUATION:
 5) Add Remote URL with SSH
 
     //Go to VSCode terminal, navigate to project directory
-    > cd <project path>
+    > cd project path
 
     //Add SSH remote URL
-    > git remote add origin <SSH remote URL>
+    > git remote add origin SSH remote URL
 
     ie. git remote add origin git@github.com:yourusername/my-project.git
 
 6) Push the Code to Github using SSH
 
     //Pushes local commits to remote Github repo using SSH
-    > git push -u origin <branch>
+    > git push -u origin branch
 
     //Verify on Github
 
+
+SITUATION: 
+    Edit existing file then save changes to Github Repo
+
+1) STAGE the file (in this example, you edited the README.md) to prepare it for committing
+    > git add README.md
+
+    OR
+
+    if you made changes to multiple files and want to stage ALL, use
+    > git add .
+
+2) COMMIT the changes
+    > git commit -m "your message here"
+
+3) Push the changes to the remote repo
+    > git push origin branch-name
 
 OTHERS:
 
@@ -112,29 +129,29 @@ OTHERS:
     > git remote -v
 
     //to update remote URL
-    > git remote set-url origin <remote url>
+    > git remote set-url origin remote url
 
 4. To delete branch
 
     LOCAL
 
     //you can't be on the branch you want to delete, so switch to another branch
-    > git checkout <branch>
+    > git checkout branch
 
     OR
-    > git switch <branch>
+    > git switch branch
 
     //delete local branch
-    > git branch -d <branch to be deleted>
+    > git branch -d branch to be deleted
 
     (won't delete branch if there's unmerged changes)
     
     //to delete forcefully even with unmerged changes
-    > git branch -D <branch to be deleted>
+    > git branch -D branch to be deleted
 
     REMOTE
 
-    > git push origin --delete <branch to be deleted>
+    > git push origin --delete branch to be deleted
 
     //OPTIONAL. Clean up references to deleted branch from local repo
     > git fetch --prune
