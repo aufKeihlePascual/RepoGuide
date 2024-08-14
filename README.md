@@ -98,24 +98,46 @@ SITUATION:
 
 OTHERS:
 
-** Error:  ' src refspec main does not match any '
+1. Error:  ' src refspec main does not match any '
 
     //Want to use 'main' but it doesn't exist. Create it.
     > git checkout -b main
 
-** Ensure you have committed changes
+2. Ensure you have committed changes
 
     > git log
 
-** Check Remote URL
+3. Check Remote URL
 
     > git remote -v
 
     //to update remote URL
     > git remote set-url origin <remote url>
 
+4. To delete branch
 
+    LOCAL
 
+    //you can't be on the branch you want to delete, so switch to another branch
+    > git checkout <branch>
+
+    OR
+    > git switch <branch>
+
+    //delete local branch
+    > git branch -d <branch to be deleted>
+
+    (won't delete branch if there's unmerged changes)
+    
+    //to delete forcefully even with unmerged changes
+    > git branch -D <branch to be deleted>
+
+    REMOTE
+
+    > git push origin --delete <branch to be deleted>
+
+    //OPTIONAL. Clean up references to deleted branch from local repo
+    > git fetch --prune
 
 
 
