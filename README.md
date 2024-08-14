@@ -7,25 +7,25 @@ SITUATION:
 1) Open project folder in VSCode
 2) Initialize Git in Terminal
 
-    >> git init
+    > git init
 
     //initializes an empty Git repo in local project folder. MAKE SURE you are in the project directory, otherwise,
     
-    >> cd <path>
-    >> git init
+    > cd <path>
+    > git init
 
 3) (OPTIONAL) Create a README.md file
-    >> New-Item -Path "<path to project>" -Name "README.md" -ItemType "File"
+    > New-Item -Path "<path to project>" -Name "README.md" -ItemType "File"
 
     //creates an empty README.md in the directory
 
 4) Stage and Commit Changes
 
     //stage the files for initial commit
-    >> git add .
+    > git add .
 
     //commit the changes
-    >> git commit -m "Initial commit"
+    > git commit -m "Initial commit"
 
 5) Create new repo on github***
     
@@ -34,13 +34,13 @@ SITUATION:
 6) Copy repo URL and Push the LOCAL repo to Github
 
     //adds the github repo as a remote
-    >> git remote add origin <repo URL>
+    > git remote add origin <repo URL>
 
 7) Push the code to Github
 
     //check the name of the branch first, it usually is MAIN or MASTER
-    >> git branch
-    >> git push -u origin <branch>
+    > git branch
+    > git push -u origin <branch>
 
 
 SITUATION:
@@ -49,25 +49,25 @@ SITUATION:
 1) Set Up SSH Keys (if not yet done)
     
     //check if you already have SSH keys
-    >> ls -al ~/.ssh
+    > ls -al ~/.ssh
 
     //this will list the files in your .ssh directory. If "id_rsa" and "id_rsa.pub" exists, SSH keys are already set up. Otherwise, generate SSH keys.
-    >> ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+    > ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 
     //press 'Enter' to accept default location for the keys. Passphrase can be blank.
 
 2) Add SSH key to the SSH agent
 
     //start the SSH agent
-    >> eval "$(ssh-agent -s)"
+    > eval "$(ssh-agent -s)"
 
     //add your SSH private key to the SSH agent
-    >> ssh-add ~/.ssh/id_rsa
+    > ssh-add ~/.ssh/id_rsa
 
 3) Add SSH key to Github account
 
     //copy the ssh publish key to clipboard
-    >> cat ~/.ssh/id_rsa.pub
+    > cat ~/.ssh/id_rsa.pub
 
     //copy the output, go to "GitHub SSH keys settings (https://github.com/settings/keys)" and click on "New SSH Key"
     //Paste SSH key and give it title, ie. "My Laptop"
@@ -81,38 +81,38 @@ SITUATION:
 5) Add Remote URL with SSH
 
     //Go to VSCode terminal, navigate to project directory
-    >> cd <project path>
+    > cd <project path>
 
     //Add SSH remote URL
-    >> git remote add origin <SSH remote URL>
+    > git remote add origin <SSH remote URL>
 
     ie. git remote add origin git@github.com:yourusername/my-project.git
 
 6) Push the Code to Github using SSH
 
     //Pushes local commits to remote Github repo using SSH
-    >> git push -u origin <branch>
+    > git push -u origin <branch>
 
     //Verify on Github
 
 
 OTHERS:
 
-# Error:  ' src refspec main does not match any '
+** Error:  ' src refspec main does not match any '
 
     //Want to use 'main' but it doesn't exist. Create it.
-    >> git checkout -b main
+    > git checkout -b main
 
-# Ensure you have committed changes
+** Ensure you have committed changes
 
-    >> git log
+    > git log
 
-# Check Remote URL
+** Check Remote URL
 
-    >> git remote -v
+    > git remote -v
 
     //to update remote URL
-    >> git remote set-url origin <remote url>
+    > git remote set-url origin <remote url>
 
 
 
