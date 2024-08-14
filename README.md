@@ -113,8 +113,8 @@ SITUATION:
 3) Push the changes to the remote repo
     > git push origin branch-name
 
-OTHERS:
 
+OTHER SITUATIONS:
 1. Error:  ' src refspec main does not match any '
 
     //Want to use 'main' but it doesn't exist. Create it.
