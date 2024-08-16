@@ -40,6 +40,7 @@ SITUATION:
 
     //check the name of the branch first, it usually is MAIN or MASTER
     > git branch
+    //pushing
     > git push -u origin branch
 
 
