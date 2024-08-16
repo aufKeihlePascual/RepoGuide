@@ -131,7 +131,15 @@ OTHER SITUATIONS:
     //to update remote URL
     > git remote set-url origin remote url
 
-4. To delete branch
+4. To check your branches
+
+    //lists all local branches
+    > git branch -a
+
+    //lists BOTH local and remote branches
+    > git branch -r
+
+5. To delete branch
 
     LOCAL
 
@@ -156,6 +164,34 @@ OTHER SITUATIONS:
     //OPTIONAL. Clean up references to deleted branch from local repo
     > git fetch --prune
 
+6. To push changes from local 'master' branch to rmeote 'main' branch on GitHub
 
+    //OPTIONAL. Fetch latest branches from remote
+    > git fetch origin
 
+    //make sure you are on 'master' branch
+    > git checkout master 
 
+    //push changes to 'main' branch on GitHub
+    > git push origin master:main
+
+7. If there are conflicts due to remote branch having changes that your local branch doesn't
+
+    //integrate those changes. ie, remote 'main' merge to local 'master' branch (branch you're currently on)
+    > git pull origin main
+
+    //resolve any merge conflicts, if any
+    > git add .
+
+    //commit the merge
+    > git commit -m "Resolved merge conflicts"
+
+    //push local changes to remote 'main'
+    > git push origin master:main
+
+8. If there's fatal refusing to merge unrelated histories
+
+    //Will merge remote 'main' branch into current branch even if they don't share common history
+    > git pull origin main --allow-unrelated-histories
+
+    //Now stage, commit and push
