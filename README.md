@@ -11,7 +11,9 @@ SITUATION:
 
     //initializes an empty Git repo in local project folder. MAKE SURE you are in the project directory, otherwise,
     
-    > cd <path>
+    > cd path
+    
+    //to initialize
     > git init
 
 3) (OPTIONAL) Create a README.md file
@@ -40,6 +42,8 @@ SITUATION:
 
     //check the name of the branch first, it usually is MAIN or MASTER
     > git branch
+    
+    //pushing
     > git push -u origin branch
 
 
